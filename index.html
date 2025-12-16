@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NEON RIOT | Official Band</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --accent:#e10600;
+  --dark:#0f0f0f;
+}
+
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:var(--dark);
+  color:#fff;
+}
+
+/* HEADER */
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  background:rgba(0,0,0,0.8);
+  padding:15px 50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:100;
+}
+header h1{
+  font-family:'Oswald',sans-serif;
+  letter-spacing:3px;
+  color:var(--accent);
+}
+nav a{
+  margin-left:25px;
+  color:white;
+  text-decoration:none;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  background:url("https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.hero-box{
+  background:rgba(0,0,0,0.7);
+  padding:50px;
+  text-align:center;
+  border-radius:15px;
+}
+.hero-box h2{
+  font-family:'Oswald',sans-serif;
+  font-size:50px;
+  letter-spacing:4px;
+}
+.hero-box button{
+  background:var(--accent);
+  border:none;
+  padding:12px 30px;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* SECTION */
+.section{
+  padding:100px 60px;
+}
+.section h2{
+  font-family:'Oswald',sans-serif;
+  letter-spacing:3px;
+  color:var(--accent);
+  text-align:center;
+  margin-bottom:50px;
+}
+
+/* MUSIC PLAYER */
+.player{
+  text-align:center;
+}
+.player button{
+  background:var(--accent);
+  border:none;
+  padding:10px 20px;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  border-radius:5px;
+}
+
+/* TOUR */
+.tour{
+  max-width:700px;
+  margin:auto;
+}
+.tour div{
+  display:flex;
+  justify-content:space-between;
+  padding:15px;
+  border-bottom:1px solid #333;
+}
+
+/* MERCH */
+.merch{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+}
+.merch-item{
+  background:#1a1a1a;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+}
+.merch-item img{
+  width:100%;
+  border-radius:10px;
+}
+.merch-item button{
+  background:var(--accent);
+  border:none;
+  padding:10px;
+  width:100%;
+  color:white;
+  cursor:pointer;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+.gallery img, .gallery iframe{
+  width:100%;
+  border-radius:15px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  background:black;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>NEON RIOT</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#music">Music</a>
+<a href="#tour">Tour</a>
+<a href="#merch">Merch</a>
+<a href="#gallery">Gallery</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-box">
+<h2>FEEL THE RIOT</h2>
+<p>Official Band Website</p>
+<button onclick="document.getElementById('music').scrollIntoView()">Listen Now</button>
+</div>
+</section>
+
+<section class="section" id="music">
+<h2>Music Player</h2>
+<div class="player">
+<audio id="song" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+<button onclick="playMusic()">▶ Play</button>
+<button onclick="pauseMusic()">⏸ Pause</button>
+</div>
+</section>
+
+<section class="section" id="tour">
+<h2>Tour Dates</h2>
+<div class="tour">
+<div><span>Delhi</span><span>15 Feb 2025</span></div>
+<div><span>Mumbai</span><span>22 Feb 2025</span></div>
+<div><span>Bangalore</span><span>01 Mar 2025</span></div>
+<div><span>Goa</span><span>10 Mar 2025</span></div>
+</div>
+</section>
+
+<section class="section" id="merch">
+<h2>Merch Store</h2>
+<div class="merch">
+<div class="merch-item">
+<img src="https://images.unsplash.com/photo-1520975922138-9f55d7d35f4c">
+<p>Band T-Shirt</p>
+<button>Buy ₹999</button>
+</div>
+<div class="merch-item">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+<p>Hoodie</p>
+<button>Buy ₹1999</button>
+</div>
+<div class="merch-item">
+<img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246">
+<p>Cap</p>
+<button>Buy ₹599</button>
+</div>
+</div>
+</section>
+
+<section class="section" id="gallery">
+<h2>Gallery</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2">
+<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f">
+
+</div>
+</section>
+
+<footer>
+© 2025 NEON RIOT | All Rights Reserved
+</footer>
+
+<script>
+const song = document.getElementById("song");
+function playMusic(){ song.play(); }
+function pauseMusic(){ song.pause(); }
+</script>
+
+</body>
+</html>
